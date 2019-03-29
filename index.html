@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app='angularApp'>
+    <head>
+        <title>New Food Violators </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            html, body, input, select, textarea
+            {
+                font-size: 1.05em;
+            }
+        </style>
+        
+        <!-- load angular via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    
+        <script src="myapp.js"></script>
+    
+    <body>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Food Violators</h1>
+            <p class="lead">Before You Go Out to Eat, Check If It's Clean</p>
+            <hr class="my-4">
+            <p>Check Health Inspection Reports for ...... </p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </div> 
+        
+			
+        <div ng-controller='mainController'>
+            <div class="input-group mb-3">
+                <input type="text" ng-model="keyword.restaurant_name" class="form-control" placeholder="Search Inspection Reports" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <buttons ng-click="inspecs.inspection_date =!inspecs.inspection_date" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button> 
+                  </div>
+            </div>
+            <button ng-click="inspecs.violation_points=!inspecs.violation_points">Display Violation Points  </button>
+            <div ng-repeat="insp in inspecs | filter: keyword "> 
+                <div class="card">
+                        
+                            <div class="card-body">
+                               <h2>{{insp.restaurant_name}}</h2> 
+                               <p>{{insp.violation_description}}</p>
+                              <h5 ng-hide="inspecs.violation_points" class="card-title">{{insp.violation_points}} Inspection Points</h5>
+                              <p class="card-text"> {{ insp.address }} </p>
+                              <p> Demerits: {{insp.current_demerits}}</p>
+                              <p> Current Grade {{insp.current_grade}} </p>
+                              <p ng-hide="inspecs.inspection_date"class="card-text"> {{insp.inspection_date}}</p>
+                   
+                              <a href="#" class="btn btn-primary"><p>{{insp.inspection_date| date}}</p></a>
+                            </div> 
+                          </div>
+                
+               
+    
+
+            </div>
+
+        </div> 
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Footer Content</h5>
+          <p>Here you can use rows and columns here to organize your footer content.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">About Us</a>
+              </li>
+              <li>
+                <a href="#!">Seattle</a>
+              </li>
+              <li>
+                <a href="#!">Violation Policy</a>
+              </li>
+              <li>
+                <a href="#!">Inspection Reports</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+
+    
+    </body>
+</html>

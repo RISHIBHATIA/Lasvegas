@@ -1,0 +1,55 @@
+h1{
+color:rgb(116, 26, 4);
+font-style: unset;
+}
+
+.jumbotron{
+    margin: 20 px;
+    background-image: url('vegas.jpg');
+    background-size: cover;
+  }
+.jumbotron p  {
+    display: center;
+    color:rgb(61, 61, 207);
+}
+
+
+.card-body h5{
+    color:green;
+}
+.card-body h2 {
+    color: gray;
+}
+
+.card-body p{
+    color: rgb(92, 85, 92);
+}
+
+
+footer {
+    background-color: aquamarine;
+
+}
+.page-footer
+
+
+.col-md-3 { 
+    color: red; 
+}
+
+mb-md-0 {
+    color: pink;
+}
+
+mb-3
+
+
+.col-md-3 mb-md-0 mb-3
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+    
+    
+.footer-copyright{}
